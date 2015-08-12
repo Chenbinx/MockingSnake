@@ -13,7 +13,7 @@ public struct Stub: Equatable {
     let builder: Builder
     let uuid: NSUUID
     
-    init(matcher: Matcher, builder: Builder) {
+    public init(matcher: Matcher, builder: Builder) {
         self.matcher = matcher
         self.builder = builder
         self.uuid = NSUUID()
