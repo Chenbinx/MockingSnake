@@ -8,3 +8,6 @@
 .Trashes
 
 DerivedData/
+xcuserdata/
+xcshareddata/
+Carthage/
