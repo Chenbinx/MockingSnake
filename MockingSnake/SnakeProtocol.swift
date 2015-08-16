@@ -98,28 +98,21 @@ public class SnakeProtocol: NSURLProtocol {
     }
 }
 
-extension NSURLSessionConfiguration {
-    override public class func initialize() {
-        if (self === NSURLSessionConfiguration.self) {
-            let defaultSessionConfiguration = class_getClassMethod(self, "defaultSessionConfiguration")
-            let snakeDefaultSessionConfiguration = class_getClassMethod(self, "snakeDefaultSessionConfiguration")
-            method_exchangeImplementations(defaultSessionConfiguration, snakeDefaultSessionConfiguration)
-
-            let ephemeralSessionConfiguration = class_getClassMethod(self, "ephemeralSessionConfiguration")
-            let snakeEphemeralSessionConfiguration = class_getClassMethod(self, "snakeEphemeralSessionConfiguration")
-            method_exchangeImplementations(ephemeralSessionConfiguration, snakeEphemeralSessionConfiguration)
-        }
-    }
-    
-    class func snakeDefaultSessionConfiguration() -> NSURLSessionConfiguration {
-        let configuration = snakeDefaultSessionConfiguration()
-        configuration.protocolClasses = [SnakeProtocol.self] as [AnyClass] + configuration.protocolClasses!
-        return configuration
-    }
-    
-    class func snakeEphemeralSessionConfiguration() -> NSURLSessionConfiguration {
-        let configuration = snakeEphemeralSessionConfiguration()
-        configuration.protocolClasses = [SnakeProtocol.self] as [AnyClass] + configuration.protocolClasses!
-        return configuration
-    }
+public func addSnakeMockingStub(matcher: Matcher, builder: Builder) -> Stub {
+    return SnakeProtocol.addStub(Stub(matcher: matcher, builder: builder))
 }
+
+public func removeSnakeMockingStub(stub: Stub) {
+    SnakeProtocol.removeStub(stub)
+}
+
+public func removeAllSnakeMockingStub() {
+    SnakeProtocol.removeAllStubs()
+}
+
+
+
+
+
+
+

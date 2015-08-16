@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3434E1F81B78FD24009C76AD /* SnakeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3434E1F71B78FD24009C76AD /* SnakeProtocol.swift */; };
+		344A2EEB1B80A543006D1D83 /* Matcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344A2EEA1B80A543006D1D83 /* Matcher.swift */; };
+		344A2EED1B80A5C3006D1D83 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344A2EEC1B80A5C3006D1D83 /* Builder.swift */; };
+		344A2EEF1B80D27E006D1D83 /* NSURLSessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344A2EEE1B80D27E006D1D83 /* NSURLSessionConfiguration.swift */; };
 		347BD93D1B7A3D4B00B3AF0E /* MockingSnake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347BD93C1B7A3D4B00B3AF0E /* MockingSnake.swift */; };
 		347BD9421B7A5E1A00B3AF0E /* SolidSnake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347BD9411B7A5E1A00B3AF0E /* SolidSnake.swift */; };
 		34FFB41E1B77493A0024C1C6 /* MockingSnake.h in Headers */ = {isa = PBXBuildFile; fileRef = 34FFB41D1B77493A0024C1C6 /* MockingSnake.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,6 +30,9 @@
 
 /* Begin PBXFileReference section */
 		3434E1F71B78FD24009C76AD /* SnakeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnakeProtocol.swift; sourceTree = "<group>"; };
+		344A2EEA1B80A543006D1D83 /* Matcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matcher.swift; sourceTree = "<group>"; };
+		344A2EEC1B80A5C3006D1D83 /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		344A2EEE1B80D27E006D1D83 /* NSURLSessionConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLSessionConfiguration.swift; sourceTree = "<group>"; };
 		347BD93C1B7A3D4B00B3AF0E /* MockingSnake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockingSnake.swift; sourceTree = "<group>"; };
 		347BD9411B7A5E1A00B3AF0E /* SolidSnake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolidSnake.swift; sourceTree = "<group>"; };
 		34FFB41A1B77493A0024C1C6 /* MockingSnake.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MockingSnake.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +87,9 @@
 				34FFB41F1B77493A0024C1C6 /* Info.plist */,
 				3434E1F71B78FD24009C76AD /* SnakeProtocol.swift */,
 				347BD93C1B7A3D4B00B3AF0E /* MockingSnake.swift */,
+				344A2EEA1B80A543006D1D83 /* Matcher.swift */,
+				344A2EEC1B80A5C3006D1D83 /* Builder.swift */,
+				344A2EEE1B80D27E006D1D83 /* NSURLSessionConfiguration.swift */,
 			);
 			path = MockingSnake;
 			sourceTree = "<group>";
@@ -203,8 +212,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				344A2EEB1B80A543006D1D83 /* Matcher.swift in Sources */,
 				3434E1F81B78FD24009C76AD /* SnakeProtocol.swift in Sources */,
+				344A2EEF1B80D27E006D1D83 /* NSURLSessionConfiguration.swift in Sources */,
 				347BD93D1B7A3D4B00B3AF0E /* MockingSnake.swift in Sources */,
+				344A2EED1B80A5C3006D1D83 /* Builder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

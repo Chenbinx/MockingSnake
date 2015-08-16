@@ -15,12 +15,23 @@ func builder(request: NSURLRequest) -> Response {
     return .Success(response, data)
 }
 
-func everything(request: NSURLRequest) -> Bool {
-    return true
+func toString(p: AnyClass) -> String {
+    return "\(p)"
 }
 
-
 class MockingSnakeTests: XCTestCase {
+    
+    func testEphemeralSessionConfigurationIncludesProtocol() {
+        let config = NSURLSessionConfiguration.ephemeralSessionConfiguration()
+        let protocolClasses = config.protocolClasses!.map(toString)
+        XCTAssertEqual(protocolClasses.first!, "SnakeProtocol")
+    }
+    
+    func testDefaultSessionConfigurationIncludesProtocol() {
+        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let protocolClasses = config.protocolClasses!.map(toString)
+        XCTAssertEqual(protocolClasses.first!, "SnakeProtocol")
+    }
     
     override func setUp() {
         super.setUp()
@@ -30,15 +41,20 @@ class MockingSnakeTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+        
+        removeAllSnakeMockingStub()
     }
     
     func testStub() {
         let expect = expectationWithDescription("expect mocking...")
-        let stub = Stub(matcher: everything, builder: builder)
-        SnakeProtocol.addStub(stub)
-        
+        addSnakeMockingStub(everything, builder: json(body: ["name": "chenbin", "age": 10]))
+
         Snake.get("www.baidu.com", params: ["phone": "13594171983"], callback: { (data, response, error) -> Void in
             print("hello response: \(response.statusCode)")
+            var json = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions())
+            json = json as! [String: AnyObject]
+            XCTAssertEqual(json["name"], "chenbin")
+            XCTAssertEqual(json["age"], 10)
             expect.fulfill()
         })
         
